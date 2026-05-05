@@ -1,6 +1,7 @@
+//Exercício 1
 const exercicio1 = () => {
     // Capturar o elemento "Resposta"
-    let resposta = document.getElementById("resultado");
+    let resposta = document.getElementById("resposta");
 
     // Variável para armazenar o resultado
     let resultadoHTML = " # ";
@@ -14,6 +15,7 @@ const exercicio1 = () => {
     resposta.innerHTML = resultadoHTML;
 };
 
+//exercicio 2
 const exercicio2 = () => {
     // Pegar o número digitado
     let num = document.getElementById("num").value;
@@ -44,6 +46,7 @@ const exercicio2 = () => {
     resultado.innerHTML = respostaTexto;
 };
 
+//exercicio 3
 const exercicio3 = () => {
     let resultado = document.getElementById("resultado");
     let erro = document.getElementById("erro");
@@ -84,25 +87,44 @@ const exercicio3 = () => {
     }
 };
 
+//exercicio 4
+const exercicio4 = () => {
+    let resultado = document.getElementById("resultado");
+    let erro = document.getElementById("erro");
+    let num = document.getElementById("num").value;
 
-//exercicio 9
-const exercicio9 = () => {
-    // Capturar o elemento "Resposta"
-    let resposta = document.getElementById("resultado");
+    // Limpar
+    resultado.innerHTML = "";
+    erro.innerHTML = "";
 
-    // Variável para armazenar o resultado
-    let resultado = " # ";
-    
-    // Loop de 1 até 100 usando o laco for
-    for (let i = 1; i <= 100; i++) {
-        resultado += i + " # ";
+    if (num == "") {
+        erro.innerHTML = "Digite um número";
+    } else {
+
+        resultado.innerHTML = "<h3>Tabuada do " + num + "</h3>";
+
+        for (let i = 0; i <= 10; i++) {
+            resultado.innerHTML += num + " x " + i + " = " + (num * i) + "<br>";
+        }
     }
-    
-    // Exibir o resultado
-    resposta.innerHTML = resultado;
-};
+}
+
+//exercicio 5
+const exercicio2 = () => {
+    // Pegar o número digitado
+    let num = document.getElementById("num").value;
+
+    // Elementos de saída
+    let resultado = document.getElementById("resultado");
+    let erro = document.getElementById("erro");
+
+    // Limpar conteúdo anterior
+    resultado.innerHTML = "";
+    erro.innerHTML = "";
+}
 
 
+//exercicio 16
 const exercicio16 = () => {
     let resultado = document.getElementById("resultado");
     let erro = document.getElementById("erro");
