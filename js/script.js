@@ -414,6 +414,8 @@ const exercicio17 = () => {
 
     resultado.innerHTML = "Área do triângulo: " + area;
 };
+
+//exercicio 18
 const exercicio18 = () => {
     let basemaior = document.getElementById("num1").value;
     let basemenor = document.getElementById("num2").value;
@@ -435,4 +437,165 @@ const exercicio18 = () => {
     }
     let area = ((basemaior + basemenor) * altura) / 2;
     resultado.innerHTML = "Área do trapézio: " + area;
+};
+
+//exercicio 19
+const exercicio19 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let palavra = document.getElementById("palavra").value;
+  let letra = document.getElementById("letra").value;
+  let vogais = ["a", "e", "i", "o", "u"];
+  // Limpar as variaveis
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+ 
+  if (letra.length > 1) {
+    erro.innerHTML = "Digite apenas um caracter.";
+    resultado.innerHTML = "";
+  } else if (palavra.length < 1) {
+    erro.innerHTML = "Digite uma palavra.";
+    resultado.innerHTML = "";
+  } else {
+    let palavraVetor = palavra.split(""); // Quebra a frase em varias palavras
+    for (let i = 0; i < palavraVetor.length; i++) {
+      if (vogais.includes(palavraVetor[i])) {
+        palavraVetor[i] = letra;
+      }
+    }
+    palavra = palavraVetor.join(""); // Junta novamente as palavras
+    resultado.innerHTML = `A palavra resultante é: ${palavra}`;
+    erro.innerHTML = "";
+  }
+};
+//exercicio 20
+const exercicio20 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  // Limpar as variaveis
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+
+  if (frase.length < 1) {
+    erro.innerHTML = "Digite uma palavra.";
+    resultado.innerHTML = "";
+  } else {
+    let fraseInvertida = frase.split(" ").reverse().join(" ");
+    resultado.innerHTML = `A frase resultante é: ${fraseInvertida}`;
+    erro.innerHTML = "";
+  }
+};
+//exercicio21
+const exercicio21 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+  // Limpar as variaveis
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+
+  if (frase.length < 1) {
+    erro.innerHTML = "Digite uma palavra.";
+    resultado.innerHTML = "";
+  } else {
+    let fraseNova = frase.split(" ").join("");
+    resultado.innerHTML = `A frase resultante é: ${fraseNova}`;
+    erro.innerHTML = "";
+  }
+};
+
+//exercicio 22
+soma = 0;
+contador = 0;
+const exercicio22 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let numero = document.getElementById("num").value;
+  // Limpar as variaveis
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+  if (soma < 100) {
+    soma += parseFloat(numero);
+    resultado.innerHTML = `A soma dos números digitados é: ${soma}`;
+    erro.innerHTML = "";
+  } else {
+    resultado.innerHTML = `A soma já atingiu o limite de 100, o total é: ${soma}`;
+    erro.innerHTML = "";
+  }
+
+};
+
+//EXERCICIO 23
+
+const exercicio23 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let palavra = document.getElementById("palavra").value;
+  let frase = document.getElementById("frase").value;
+
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+
+  if (frase.length < 1 || palavra.length < 1) {
+    erro.innerHTML = "Digite uma frase e uma palavra para realizar a contagem.";
+    resultado.innerHTML = "";
+  } else {
+    let palavrasNaFrase = frase.split(" ");
+    let contador = 0;
+    for (let i = 0; i < palavrasNaFrase.length; i++) {
+      if (palavrasNaFrase[i] == palavra) {
+        contador++;
+      }
+    }
+    resultado.innerHTML = `A palavra "${palavra}" aparece ${contador} vez(es) na frase.`;
+    erro.innerHTML = "";
+  }
+};
+//EXERCICIO 24
+
+const exercicio24 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let frase = document.getElementById("frase").value;
+
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+
+  if (frase.length < 1) {
+    erro.innerHTML = "Digite uma frase para converter.";
+    resultado.innerHTML = "";
+  } else {
+    let palavras = frase.split(" ");
+    let fraseNova = palavras
+      .map((palavra) => {
+        return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+      })
+      .join(" ");
+    resultado.innerHTML = `A frase resultante é: ${fraseNova}`;
+    erro.innerHTML = "";
+  }
+};
+
+//EXERCICIO 25
+
+const exercicio25 = () => {
+  let resultado = document.getElementById("resultado");
+  let erro = document.getElementById("erro");
+  let num1 = document.getElementById("num1").value;
+  let num2 = document.getElementById("num2").value;
+  let num3 = document.getElementById("num3").value;
+
+  erro.innerHTML = "";
+  resultado.innerHTML = "";
+
+  if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+    erro.innerHTML = "Digite três números válidos.";
+    resultado.innerHTML = "";
+  } else {
+    let numeros = [num1, num2, num3];
+    numeros.sort((a, b) => a - b);
+    resultado.innerHTML = `Os números em ordem crescente são: ${numeros.join(", ")}`;
+    erro.innerHTML = "";
+  }
 };
